@@ -16,7 +16,7 @@ public class Main {
 
     public static void main(String[] args) {
         long start = System.currentTimeMillis();
-        BatchExecutor batchExecutor = new BatchExecutorImpl();
+        BatchExecutor batchExecutor = new BatchExecutor();
         batchExecutor.execute(generateList(SIZE), x -> {
                 try {
                     // some heavy processing
