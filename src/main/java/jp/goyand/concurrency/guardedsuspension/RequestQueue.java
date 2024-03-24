@@ -1,12 +1,11 @@
 package jp.goyand.concurrency.guardedsuspension;
 
-//import java.util.Queue;
+// import java.util.Queue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
-
 // example 1
-//public class RequestQueue {
+// public class RequestQueue {
 //    private final Queue<Request> queue = new java.util.LinkedList<>();
 //    public synchronized Request getRequest() {
 //        while (queue.peek() == null) {
@@ -21,26 +20,25 @@ import java.util.concurrent.LinkedBlockingQueue;
 //        queue.offer(request);
 //        notifyAll();
 //    }
-//}
+// }
 
 // example 2
 public class RequestQueue {
-    private final BlockingQueue<Request> queue = new LinkedBlockingQueue<>();
+  private final BlockingQueue<Request> queue = new LinkedBlockingQueue<>();
 
-    public Request getRequest() {
-        Request request = null;
-        try {
-            request = queue.take();
-        } catch (InterruptedException e) {
-        }
-        return request;
+  public Request getRequest() {
+    Request request = null;
+    try {
+      request = queue.take();
+    } catch (InterruptedException e) {
     }
-    public void putRequest(Request request) {
-        try {
-            queue.put(request);
-        } catch (InterruptedException e) {
-        }
+    return request;
+  }
+
+  public void putRequest(Request request) {
+    try {
+      queue.put(request);
+    } catch (InterruptedException e) {
     }
+  }
 }
-
-

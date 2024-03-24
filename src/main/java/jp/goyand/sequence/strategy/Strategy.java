@@ -1,7 +1,7 @@
 package jp.goyand.sequence.strategy;
 
 public interface Strategy {
-    public abstract Hand nextHand();
+  public abstract Hand nextHand();
 
-    public abstract void study(boolean win);
+  public abstract void study(boolean win);
 }

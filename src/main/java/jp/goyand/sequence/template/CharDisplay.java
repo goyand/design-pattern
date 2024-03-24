@@ -1,24 +1,24 @@
 package jp.goyand.sequence.template;
 
 public class CharDisplay extends AbstractDisplay {
-    private char ch;
+  private char ch;
 
-    public CharDisplay(char ch) {
-        this.ch = ch;
-    }
+  public CharDisplay(char ch) {
+    this.ch = ch;
+  }
 
-    @Override
-    public void open() {
-        System.out.print("<<");
-    }
+  @Override
+  public void open() {
+    System.out.print("<<");
+  }
 
-    @Override
-    public void print() {
-        System.out.print(ch);
-    }
+  @Override
+  public void print() {
+    System.out.print(ch);
+  }
 
-    @Override
-    public void close() {
-        System.out.println(">>");
-    }
+  @Override
+  public void close() {
+    System.out.println(">>");
+  }
 }

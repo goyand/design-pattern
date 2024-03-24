@@ -3,7 +3,7 @@ package jp.goyand.concurrency.producerconsumer;
 import java.util.concurrent.ArrayBlockingQueue;
 
 // Example 1
-//public class Table {
+// public class Table {
 //    private final String[] buffer;
 //    private int tail;
 //    private int head;
@@ -35,22 +35,22 @@ import java.util.concurrent.ArrayBlockingQueue;
 //        System.out.println(Thread.currentThread().getName() + " takes " + cake);
 //        return cake;
 //    }
-//}
+// }
 
 // Example 2
 public class Table extends ArrayBlockingQueue<String> {
-    public Table(int count) {
-        super(count);
-    }
+  public Table(int count) {
+    super(count);
+  }
 
-    public void put(String cake) throws InterruptedException {
-        System.out.println(Thread.currentThread().getName() + " puts " + cake);
-        super.put(cake);
-    }
+  public void put(String cake) throws InterruptedException {
+    System.out.println(Thread.currentThread().getName() + " puts " + cake);
+    super.put(cake);
+  }
 
-    public String take() throws InterruptedException {
-        String cake = super.take();
-        System.out.println(Thread.currentThread().getName() + " takes " + cake);
-        return cake;
-    }
+  public String take() throws InterruptedException {
+    String cake = super.take();
+    System.out.println(Thread.currentThread().getName() + " takes " + cake);
+    return cake;
+  }
 }
